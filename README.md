@@ -94,17 +94,18 @@ To accept all defaults, and set a random number seed for repeatability, try
      )
 ```
 
-The results of this run are already stored, so if you don't want to wait, you can simply type
-
-```
-data(W)
-```
-
 This code, contained in an R script, can be found here,
 
 ```
 system.file("scripts/runMCMC.R", package = "MCMCharp")
 ```
+
+The results of this run are already stored, so if you don't want to wait, you can simply type to go straight to graphics below.
+
+```
+data(W)
+```
+
 
 *Some Graphics*
 
@@ -208,6 +209,7 @@ pN_adu1_sd =  100000
 Priors and Posteriors for phi for several years
 
 ```
+  par_orig = par()
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   plot(density(logit(unlist(lapply(W$phi, function(x) x[[1]])))),
     main = '1946', xlab = 'logit(phi[1])', lwd = 2)
@@ -225,11 +227,13 @@ Priors and Posteriors for phi for several years
     main = '2004', xlab = 'logit(phi[60])', lwd = 2)
   lines((-30:30)/20 + pphi_mu, 
     dnorm((-30:30)/20 + pphi_mu, mean = pphi_mu, sd = pphi_sd), col = 'blue', lwd = 2)
+  par(par_orig)
 ```
 
 priors and posteriors for delta for several years
 
 ```
+  par_orig = par()
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   plot(density(logit(unlist(lapply(W$delta, function(x) x[[1]])))),
     main = '1946', xlab = 'logit(delta[1])', lwd = 2)
@@ -247,11 +251,13 @@ priors and posteriors for delta for several years
     main = '2004', xlab = 'logit(delta[60])', lwd = 2)
   lines((-30:30)/20 + pdelta_mu, 
     dnorm((-30:30)/20 + pdelta_mu, mean = pdelta_mu, sd = pdelta_sd), col = 'blue', lwd = 2)
+  par(par_orig)
 ```
 
 priors and posteriors for kappa for several years
 
 ```
+  par_orig = par()
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   plot(density(logit(unlist(lapply(W$kappa1, function(x) x[[1]])))),
     main = '1946', xlab = 'logit(kappa[1])', lwd = 2)
@@ -269,6 +275,7 @@ priors and posteriors for kappa for several years
     main = '2004', xlab = 'logit(kappa[60])', lwd = 2)
   lines((-30:30)/20 + pkappa_mu, 
     dnorm((-30:30)/20 + pkappa_mu, mean = pkappa_mu, sd = pkappa_sd), col = 'blue', lwd = 2)
+  par(par_orig)
 ```
 
 prior and posterior for rho 
@@ -283,6 +290,7 @@ lines((-30:30)/30 + prho_mu,
 priors and posteriors for first eigenvalue for several years, both with and without density dependence factor (without is intrinsic growth at very low population values)
 
 ```
+  par_orig = par()
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   evals = 1:1000
   for(k in 1:1000) {
@@ -326,6 +334,7 @@ priors and posteriors for first eigenvalue for several years, both with and with
   }
   plot(density(evals), main = '2003, Dens Dep',
     xlab = 'Posterior First Eigenvalue')
+  par(par_orig)
 ```
 
 -------------

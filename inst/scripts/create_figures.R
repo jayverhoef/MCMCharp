@@ -74,6 +74,7 @@ pN_adu1_mu = 1000000
 pN_adu1_sd =  100000
 
 # Priors and Posteriors for phi for several years
+  par_orig = par()
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   plot(density(logit(unlist(lapply(W$phi, function(x) x[[1]])))),
     main = '1946', xlab = 'logit(phi[1])', lwd = 2)
@@ -91,8 +92,10 @@ pN_adu1_sd =  100000
     main = '2004', xlab = 'logit(phi[60])', lwd = 2)
   lines((-30:30)/20 + pphi_mu, 
     dnorm((-30:30)/20 + pphi_mu, mean = pphi_mu, sd = pphi_sd), col = 'blue', lwd = 2)
-
+  par(par_orig)
+  
 # Priors and Posteriors for delta for several years
+  par_orig = par()
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   plot(density(logit(unlist(lapply(W$delta, function(x) x[[1]])))),
     main = '1946', xlab = 'logit(delta[1])', lwd = 2)
@@ -110,9 +113,11 @@ pN_adu1_sd =  100000
     main = '2004', xlab = 'logit(delta[60])', lwd = 2)
   lines((-30:30)/20 + pdelta_mu, 
     dnorm((-30:30)/20 + pdelta_mu, mean = pdelta_mu, sd = pdelta_sd), col = 'blue', lwd = 2)
+  par(par_orig)
 
 # Priors and Posteriors for kappa for several years
 
+  par_orig = par()
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   plot(density(logit(unlist(lapply(W$kappa1, function(x) x[[1]])))),
     main = '1946', xlab = 'logit(kappa[1])', lwd = 2)
@@ -130,6 +135,7 @@ pN_adu1_sd =  100000
     main = '2004', xlab = 'logit(kappa[60])', lwd = 2)
   lines((-30:30)/20 + pkappa_mu, 
     dnorm((-30:30)/20 + pkappa_mu, mean = pkappa_mu, sd = pkappa_sd), col = 'blue', lwd = 2)
+  par(par_orig)
 
 # Prior and Posterior for rho 
 plot(density(log(W$rho)), xlim = c(-5.5, -1.5),
@@ -141,6 +147,7 @@ lines((-30:30)/30 + prho_mu,
 # without density dependence factor (without is intrinsic growth at very low
 # population values)
 
+  par_orig = par()
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   evals = 1:1000
   for(k in 1:1000) {
@@ -187,5 +194,6 @@ lines((-30:30)/30 + prho_mu,
   }
   plot(density(evals), main = '2003, Dens Dep',
     xlab = 'Posterior First Eigenvalue')
+  par(par_orig)
 
 
