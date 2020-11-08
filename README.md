@@ -60,11 +60,11 @@ A PDF Presentation on Model and Results
 
 A pdf presentation on the model can be found here
 
-system.file("doc/MCMCharp.pdf", package = "MCMCharp")
+system.file("doc/NAMMCO_Harpeast.pdf", package = "MCMCharp")
 
 The LATEX file that produced the presentation can be found here
 
-system.file("doc/MCMCharp.tex", package = "MCMCharp")
+system.file("doc/NAMMCO_Harpeast.tex", package = "MCMCharp")
 
 and all figures can be found in this subdirectory
 
@@ -80,6 +80,9 @@ The main file that runs the MCMC code is the function MCMCharp().  To see a list
 ```
 help(MCMCharp)
 ```
+
+The arguments have descriptions, and match the description of the code, given above.
+
 To accept all defaults, and set a random number seed for repeatability, try
 
 ```
@@ -99,6 +102,28 @@ data(W)
 
 *Some Graphics*
 
+Here are some trace plots for MCMC sampling.  More formal tests on convergence can be applied.
+
+trace plot for N_adu[1]
+
+```
+plot(W$N_adu1, type = 'l')
+```
+
+trace plot for N_pup[1]
+
+```
+plot(W$N_pup1, type = 'l')
+```
+
+some trace plots for phi
+
+```
+plot(unlist(lapply(W$phi, function(x) x[[1]])), type = 'l')
+plot(unlist(lapply(W$phi, function(x) x[[2]])), type = 'l')
+plot(unlist(lapply(W$phi, function(x) x[[59]])), type = 'l')
+plot(unlist(lapply(W$phi, function(x) x[[60]])), type = 'l')
+```
 
 
 -------------
