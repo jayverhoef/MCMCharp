@@ -261,10 +261,24 @@ Custom code written in R, uses batch sampling for $\bdelta,\bkappa,\bphi$, with 
 
 
 \begin{frame} 
+Posterior abundance
+	\begin{tabular} {p{6cm} p{3cm}}
 
-\begin{center}
-	\includegraphics[height=7cm]{figure/Pop_traj} 
-\end{center}
+	\includegraphics[height=6cm]{figure/Pop_traj} &
+  \vspace{-5cm}
+  \begin{itemize}
+   {\tiny
+   \item grey lines = 1000 posterior samples of adult abundance
+   \item red lines = 1000 posterior samples of pup abundance
+   \item brown dots = estimated pup abundance from surveys
+   \item black line = adult harvest 
+   \item orange line = pup harvest \\
+   {} 
+   }
+  \end{itemize}
+  
+  \end{tabular}
+
 \end{frame}
 
 %-----------------------------------------------------------------------
@@ -272,10 +286,20 @@ Custom code written in R, uses batch sampling for $\bdelta,\bkappa,\bphi$, with 
 %-----------------------------------------------------------------------
 
 \begin{frame} 
+Posterior of phi (fecundity)
+	\begin{tabular} {p{7cm} p{2cm}}
 
-\begin{center}
-	\includegraphics[height=7cm]{figure/Post_phi} 
-\end{center}
+	\includegraphics[height=7cm]{figure/Post_phi}  &
+
+  \vspace{-5cm}
+  \begin{itemize}
+   {\tiny
+   \item blue lines = prior
+   \item black lines = posterior \\
+   {} 
+   }
+  \end{itemize}
+  \end{tabular}
 \end{frame}
 
 %-----------------------------------------------------------------------
@@ -284,10 +308,22 @@ Custom code written in R, uses batch sampling for $\bdelta,\bkappa,\bphi$, with 
 
 \begin{frame} 
 
-\begin{center}
-	\includegraphics[height=7cm]{figure/Post_delta} 
-\end{center}
+Posterior of delta (adult survival)
+	\begin{tabular} {p{7cm} p{2cm}}
+
+	\includegraphics[height=7cm]{figure/Post_delta}  &
+
+  \vspace{-5cm}
+  \begin{itemize}
+   {\tiny
+   \item blue lines = prior
+   \item black lines = posterior \\
+   {} 
+   }
+  \end{itemize}
+  \end{tabular}
 \end{frame}
+
 
 %-----------------------------------------------------------------------
 %           Posterior kappa
@@ -295,16 +331,51 @@ Custom code written in R, uses batch sampling for $\bdelta,\bkappa,\bphi$, with 
 
 \begin{frame} 
 
-\begin{center}
-	\includegraphics[height=7cm]{figure/Post_kappa} 
-\end{center}
+Posterior of kappa (pup survival after surveys)
+	\begin{tabular} {p{7cm} p{2cm}}
+
+	\includegraphics[height=7cm]{figure/Post_kappa}  &
+
+  \vspace{-5cm}
+  \begin{itemize}
+   {\tiny
+   \item blue lines = prior
+   \item black lines = posterior \\
+   {} 
+   }
+  \end{itemize}
+  \end{tabular}
 \end{frame}
+
+%-----------------------------------------------------------------------
+%           Posterior rho
+%-----------------------------------------------------------------------
+
+\begin{frame} 
+
+Posterior of rho (controls fecundity decay with increased abundance)
+	\begin{tabular} {p{7cm} p{2cm}}
+
+	\includegraphics[height=6cm]{figure/Post_rho}  &
+
+  \vspace{-5cm}
+  \begin{itemize}
+   {\tiny
+   \item blue lines = prior
+   \item black lines = posterior \\
+   {} 
+   }
+  \end{itemize}
+  \end{tabular}
+\end{frame}
+
 
 %-----------------------------------------------------------------------
 %           Posterior Eigenvalues
 %-----------------------------------------------------------------------
 
 \begin{frame} 
+Posterior of first eigenvalue
 
 \begin{center}
 	\includegraphics[height=7cm]{figure/Post_eigval} 
@@ -336,16 +407,33 @@ Notes
 \begin{frame}
 
 \begin{itemize}
-
+ 
   \item The code runs quickly for such a small data set, even though there are 228 parameters (75 each for $\bdelta$, $\bkappa$, and $\bphi$, along with $\rho$, $P_{1}$, and $A_{1}$), by using batch sampling for $\bdelta$, $\bkappa$, and $\bphi$.
 
-  \item There is very little survey data, on pups only.  The results of the model depend a lot on the priors.
+  \item With the high levels of harvest early on, if demographic parameters are drawn from a common distribution across years, the population decreases before recovering when harvest decreases.
+  
+  \item There appears to be information in the data on the density-dependent decay parameter controlling fecundity, at least given priors for all other parameters, as the posterior is substantially shifted from the prior.
+
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+%           Notes
+%-----------------------------------------------------------------------
+
+\begin{frame}
+
+\begin{itemize}
+ 
+  \item There is very little survey data, on pups only.  The results of the model depend a lot on the priors.  Many more prior scenarios can be tried with the R package.
 
   \item The attraction of a full Bayesian model is that we sample from the full joint posterior distribution.  The posterior distribution of pup and nonpup abundance is derived from the Leslie matrix model through the joint distribution of $\bdelta$, $\bkappa$, $\bphi$, $\rho$, $P_{1}$, and $A_{1}$.  Moreover, the posterior distribution of intrinsic growth, obtained from the first eigenvalue of the Leslie matrix model, is easily obtained if we have the joint posterior distribution of Leslie matrix parameters.
  
 \end{itemize}
 
 \end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

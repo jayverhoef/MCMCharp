@@ -74,7 +74,7 @@ pN_adu1_mu = 1000000
 pN_adu1_sd =  100000
 
 # Priors and Posteriors for phi for several years
-  par_orig = par()
+  par_orig = par(no.readonly = TRUE)
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   plot(density(logit(unlist(lapply(W$phi, function(x) x[[1]])))),
     main = '1946', xlab = 'logit(phi[1])', lwd = 2)
@@ -95,7 +95,7 @@ pN_adu1_sd =  100000
   par(par_orig)
   
 # Priors and Posteriors for delta for several years
-  par_orig = par()
+  par_orig = par(no.readonly = TRUE)
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   plot(density(logit(unlist(lapply(W$delta, function(x) x[[1]])))),
     main = '1946', xlab = 'logit(delta[1])', lwd = 2)
@@ -117,7 +117,7 @@ pN_adu1_sd =  100000
 
 # Priors and Posteriors for kappa for several years
 
-  par_orig = par()
+  par_orig = par(no.readonly = TRUE)
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   plot(density(logit(unlist(lapply(W$kappa1, function(x) x[[1]])))),
     main = '1946', xlab = 'logit(kappa[1])', lwd = 2)
@@ -147,7 +147,7 @@ lines((-30:30)/30 + prho_mu,
 # without density dependence factor (without is intrinsic growth at very low
 # population values)
 
-  par_orig = par()
+  par_orig = par(no.readonly = TRUE)
   layout(matrix(1:4, ncol = 2, byrow = TRUE))
   evals = 1:1000
   for(k in 1:1000) {
