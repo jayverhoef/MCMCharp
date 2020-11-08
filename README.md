@@ -4,7 +4,7 @@
 
 [![Last-changedate](https://img.shields.io/badge/last%20change-2016--10--14-yellowgreen.svg)](/commits/master)
 
-# fluvgrm 
+# MCMCharp 
 ## A Quick and Dirty Bayesian Leslie Matrix Model of Norway HarpEast Data 
 
 #### Jay M. Ver Hoef<sup>a</sup>
