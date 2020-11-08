@@ -189,7 +189,3 @@ lines((-30:30)/30 + prho_mu,
     xlab = 'Posterior First Eigenvalue')
 
 
-plot(density(log(W$rho)), xlim = c(-3.5, -1.5),
-  xlab = 'log(rho)', lwd = 2)
-lines((-30:30)/30 + prho_mu, 
-  dnorm((-30:30)/30 + prho_mu, mean = prho_mu, sd = prho_sd), col = 'blue', lwd = 2)

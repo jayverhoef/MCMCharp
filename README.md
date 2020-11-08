@@ -218,6 +218,110 @@ Priors and Posteriors for phi for several years
     dnorm((-30:30)/20 + pphi_mu, mean = pphi_mu, sd = pphi_sd), col = 'blue', lwd = 2)
 ```
 
+priors and posteriors for delta for several years
+
+```
+  layout(matrix(1:4, ncol = 2, byrow = TRUE))
+  plot(density(logit(unlist(lapply(W$delta, function(x) x[[1]])))),
+    main = '1946', xlab = 'logit(delta[1])', lwd = 2)
+  lines((-30:30)/20 + pdelta_mu, 
+    dnorm((-30:30)/20 + pdelta_mu, mean = pdelta_mu, sd = pdelta_sd), col = 'blue', lwd = 2)
+  plot(density(logit(unlist(lapply(W$delta, function(x) x[[2]])))),
+    main = '1947', xlab = 'logit(delta[2])', lwd = 2)
+  lines((-30:30)/20 + pdelta_mu, 
+    dnorm((-30:30)/20 + pdelta_mu, mean = pdelta_mu, sd = pdelta_sd), col = 'blue', lwd = 2)
+  plot(density(logit(unlist(lapply(W$delta, function(x) x[[59]])))),
+    main = '2003', xlab = 'logit(delta[59])', lwd = 2)
+  lines((-30:30)/20 + pdelta_mu, 
+    dnorm((-30:30)/20 + pdelta_mu, mean = pdelta_mu, sd = pdelta_sd), col = 'blue', lwd = 2)
+  plot(density(logit(unlist(lapply(W$delta, function(x) x[[60]])))),
+    main = '2004', xlab = 'logit(delta[60])', lwd = 2)
+  lines((-30:30)/20 + pdelta_mu, 
+    dnorm((-30:30)/20 + pdelta_mu, mean = pdelta_mu, sd = pdelta_sd), col = 'blue', lwd = 2)
+```
+
+priors and posteriors for kappa for several years
+
+```
+  layout(matrix(1:4, ncol = 2, byrow = TRUE))
+  plot(density(logit(unlist(lapply(W$kappa1, function(x) x[[1]])))),
+    main = '1946', xlab = 'logit(kappa[1])', lwd = 2)
+  lines((-30:30)/20 + pkappa_mu, 
+    dnorm((-30:30)/20 + pkappa_mu, mean = pkappa_mu, sd = pkappa_sd), col = 'blue', lwd = 2)
+  plot(density(logit(unlist(lapply(W$kappa1, function(x) x[[2]])))),
+    main = '1947', xlab = 'logit(kappa[2])', lwd = 2)
+  lines((-30:30)/20 + pkappa_mu, 
+    dnorm((-30:30)/20 + pkappa_mu, mean = pkappa_mu, sd = pkappa_sd), col = 'blue', lwd = 2)
+  plot(density(logit(unlist(lapply(W$kappa1, function(x) x[[59]])))),
+    main = '2003', xlab = 'logit(kappa[59])', lwd = 2)
+  lines((-30:30)/20 + pkappa_mu, 
+    dnorm((-30:30)/20 + pkappa_mu, mean = pkappa_mu, sd = pkappa_sd), col = 'blue', lwd = 2)
+  plot(density(logit(unlist(lapply(W$kappa1, function(x) x[[60]])))),
+    main = '2004', xlab = 'logit(kappa[60])', lwd = 2)
+  lines((-30:30)/20 + pkappa_mu, 
+    dnorm((-30:30)/20 + pkappa_mu, mean = pkappa_mu, sd = pkappa_sd), col = 'blue', lwd = 2)
+```
+
+prior and posterior for rho 
+
+```
+plot(density(log(W$rho)), xlim = c(-5.5, -1.5),
+  xlab = 'log(rho)', lwd = 2)
+lines((-30:30)/30 + prho_mu, 
+  dnorm((-30:30)/30 + prho_mu, mean = prho_mu, sd = prho_sd), col = 'blue', lwd = 2)
+```
+
+priors and posteriors for first eigenvalue for several years, both with and without density dependence factor (without is intrinsic growth at very low population values)
+
+```
+  layout(matrix(1:4, ncol = 2, byrow = TRUE))
+  evals = 1:1000
+  for(k in 1:1000) {
+    M = matrix(0, nrow = 2, ncol = 2)
+    M[1,2] = unlist(lapply(W$phi, function(x) x[[1]]))[k]
+    M[2,1] = unlist(lapply(W$kappa1, function(x) x[[1]]))[k]
+    M[2,2] = unlist(lapply(W$delta, function(x) x[[1]]))[k]
+    evals[k] = eigen(M)$values[1]
+  }
+  plot(density(evals), main = '1946, No Dens Dep',
+    xlab = 'Posterior First Eigenvalue')
+  evals = 1:1000
+  for(k in 1:1000) {
+    M = matrix(0, nrow = 2, ncol = 2)
+    M[1,2] = exp(-W$rho[k]*(N_adu[i-1]+N_pup[i-1])/100000)*
+      unlist(lapply(W$phi, function(x) x[[1]]))[k]
+    M[2,1] = unlist(lapply(W$kappa1, function(x) x[[1]]))[k]
+    M[2,2] = unlist(lapply(W$delta, function(x) x[[1]]))[k]
+    evals[k] = eigen(M)$values[1]
+  }
+  plot(density(evals), main = '1946, Dens Dep',
+    xlab = 'Posterior First Eigenvalue')   
+  evals = 1:1000
+  for(k in 1:1000) {
+    M = matrix(0, nrow = 2, ncol = 2)
+    M[1,2] = unlist(lapply(W$phi, function(x) x[[59]]))[k]
+    M[2,1] = unlist(lapply(W$kappa1, function(x) x[[59]]))[k]
+    M[2,2] = unlist(lapply(W$delta, function(x) x[[59]]))[k]
+    evals[k] = eigen(M)$values[1]
+  }
+  plot(density(evals), main = '2003, No Dens Dep',
+    xlab = 'Posterior First Eigenvalue')
+  evals = 1:1000
+  for(k in 1:1000) {
+    M = matrix(0, nrow = 2, ncol = 2)
+    M[1,2] = exp(-W$rho[k]*(N_adu[i-1]+N_pup[i-1])/100000)*
+      unlist(lapply(W$phi, function(x) x[[59]]))[k]
+    M[2,1] = unlist(lapply(W$kappa1, function(x) x[[59]]))[k]
+    M[2,2] = unlist(lapply(W$delta, function(x) x[[59]]))[k]
+    evals[k] = eigen(M)$values[1]
+  }
+  plot(density(evals), main = '2003, Dens Dep',
+    xlab = 'Posterior First Eigenvalue')
+plot(density(log(W$rho)), xlim = c(-3.5, -1.5),
+  xlab = 'log(rho)', lwd = 2)
+lines((-30:30)/30 + prho_mu, 
+  dnorm((-30:30)/30 + prho_mu, mean = prho_mu, sd = prho_sd), col = 'blue', lwd = 2)
+```
 
 -------------
 ##### Disclaimer
