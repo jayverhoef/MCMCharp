@@ -179,6 +179,46 @@ fitted abundance and trajectory
   lines(catch_data$year, catch_data$pup, col = 'orange', lwd = 3)
 ```
 
+priors for the following figures
+
+```
+pdelta_mu = 2.2
+pdelta_sd = .5
+pphi_mu = -.4
+pphi_sd = .5
+pkappa_mu = 1.4
+pkappa_sd = .5
+prho_mu = -4.0
+prho_sd = .5
+pN_pup1_mu = 300000
+pN_pup1_sd =  50000
+pN_adu1_mu = 1000000
+pN_adu1_sd =  100000
+```
+
+Priors and Posteriors for phi for several years
+
+```
+  layout(matrix(1:4, ncol = 2, byrow = TRUE))
+  plot(density(logit(unlist(lapply(W$phi, function(x) x[[1]])))),
+    main = '1946', xlab = 'logit(phi[1])', lwd = 2)
+  lines((-30:30)/20 + pphi_mu, 
+    dnorm((-30:30)/20 + pphi_mu, mean = pphi_mu, sd = pphi_sd), col = 'blue', lwd = 2)
+  plot(density(logit(unlist(lapply(W$phi, function(x) x[[2]])))),
+    main = '1947', xlab = 'logit(phi[2])', lwd = 2)
+  lines((-30:30)/20 + pphi_mu, 
+    dnorm((-30:30)/20 + pphi_mu, mean = pphi_mu, sd = pphi_sd), col = 'blue', lwd = 2)
+  plot(density(logit(unlist(lapply(W$phi, function(x) x[[59]])))),
+    main = '2003', xlab = 'logit(phi[59])', lwd = 2)
+  lines((-30:30)/20 + pphi_mu, 
+    dnorm((-30:30)/20 + pphi_mu, mean = pphi_mu, sd = pphi_sd), col = 'blue', lwd = 2)
+  plot(density(logit(unlist(lapply(W$phi, function(x) x[[60]])))),
+    main = '2004', xlab = 'logit(phi[60])', lwd = 2)
+  lines((-30:30)/20 + pphi_mu, 
+    dnorm((-30:30)/20 + pphi_mu, mean = pphi_mu, sd = pphi_sd), col = 'blue', lwd = 2)
+```
+
+
 -------------
 ##### Disclaimer
 
