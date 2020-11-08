@@ -5,41 +5,28 @@
 [![Last-changedate](https://img.shields.io/badge/last%20change-2016--10--14-yellowgreen.svg)](/commits/master)
 
 # fluvgrm 
-## An R package in support of publication, "The Torgegram for Fluvial Variography: Characterizing Spatial Dependence on Stream Networks." 
+## A Quick and Dirty Bayesian Leslie Matrix Model of Norway HarpEast Data 
 
-#### Jay M. Ver Hoef<sup>a</sup> and Dale. L. Zimmerman<sup>b</sup>
+#### Jay M. Ver Hoef<sup>a</sup>
 
-#### <sup>a</sup>NOAA Fisheries (NMFS) Alaska Fisheries Science Center, and 
-#### <sup>b</sup>Department of Statistics and Actuarial Science, University of Iowa
+#### <sup>a</sup>NOAA Fisheries (NMFS) Alaska Fisheries Science Center
 
 As a scientific work, and in keeping with common scientific practicies, we kindly request that you cite our research project and applicable publications if you use our work(s) or data in your publications or presentations. Additionally, we strongly encourage and welcome collaboration to promote use of these data in the proper context and scope.  The publication is currently in revision:
-
-#### Zimmerman, Dale L. and Ver Hoef, Jay. M. The Torgegram for Fluvial Variography: Characterizing Spatial Dependence on Stream Networks. In revision to *Journal of Computational and Graphical Statistics*.
 
 
 Executive Summary
 -----------------
 
-We introduce a graphical diagnostic called the Torgegram for characterizing the spatial dependence among observations of a variable on a stream network. The Torgegram consists of four component empirical semivariograms, each one corresponding to a particular combination of flow-connectedness within the network and model type (tail-up/tail-down). We show how an overall strategy for fluvial variography can be based on a careful examination of the Torgegram. An analysis of water temperature data from a stream network within the Columbia River basin of the northwest United States illustrates the diagnostic value of the Torgegram as well as its limitations. Additional uses and extensions of the Torgegram are discussed.
+MCMC sampling for simple harp seal model with a 2-age Leslie matrix model where parameters are stochastic from year to year, but each parameter has a common prior across years.  There are also priors on starting values for adults and pups, and a prior that controls density-dependent decay in fecundity.
 
 Installation
 ------------
 
-Installation of this R data package is done through the `devtools::install_github()` function or by downloading the [source package from the latest release](https://github.com/jayverhoef/fluvgrm).
+Installation of this R data package is done through the `devtools::install_github()` function or by downloading the [source package from the latest release](https://github.com/jayverhoef/MCMCharp).
 
 ```
 library("devtools")
-install_github("jayverhoef/fluvgrm")
-```
-Also, basic stream network functions have been incorporated from the SSN package, so that needs to be downloaded from CRAN.
-
-```
-install.packages("SSN")
-```
-We also like the color palette provided by viridis, so that package should be downloaded to run scripts without any modifications.
-
-```
-install.packages("viridis")
+install_github("jayverhoef/MCMCharp")
 ```
 
 Examine the Example Data
