@@ -44,10 +44,13 @@ print(pup_production)
 in R.  The scripts below show how to import it and obtain results in the paper.
 
 The data were created from CSV files stored here
+
 system.file("rawdata/catch_data.csv", package = "MCMCharp")
 system.file("rawdata/pup_production.csv", package = "MCMCharp")
 
 using this script
+
+print(system.file("rawdata/createData.R", package = "MCMCharp"))
 
 Run R Scripts
 -------------
