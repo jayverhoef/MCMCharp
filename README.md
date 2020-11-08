@@ -70,6 +70,10 @@ and all figures can be found in this subdirectory
 
 system.file("doc/figure", package = "MCMCharp")
 
+with the R script that created the figures here
+
+system.file("doc/figure/create_pdf_figures.R", package = "MCMCharp")
+
 Run R Scripts
 -------------
 
