@@ -32,7 +32,7 @@
 #' @param harvadu_data vector of adult harvest values for each year
 #' @param harvpup_data vector of adult harvest values for each year
 #' @param pupcount_data data set of pup counts
-#' @param set_seed default If this is specified, the seed value for randomization will be set, so all results will be repeatable.  If NULL, the seed value is taken from the computer clock. Default is NULL.
+#' @param set_seed If this is specified, the seed value for randomization will be set, so all results will be repeatable.  If NULL, the seed value is taken from the computer clock. Default is NULL.
 #'
 #' @return a list of the MCMC chain values (first six list items), as well as acceptance rates (last 6 list items).
 #'
