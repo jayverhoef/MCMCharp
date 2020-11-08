@@ -116,7 +116,7 @@ trace plot for N_pup[1]
 plot(W$N_pup1, type = 'l')
 ```
 
-some trace plots for phi
+some trace plots for phi for several years (indices 1, 2, 59, 60)
 
 ```
 plot(unlist(lapply(W$phi, function(x) x[[1]])), type = 'l')
@@ -125,6 +125,59 @@ plot(unlist(lapply(W$phi, function(x) x[[59]])), type = 'l')
 plot(unlist(lapply(W$phi, function(x) x[[60]])), type = 'l')
 ```
 
+some trace plots for delta for several years (indices 1, 2, 59, 60)
+
+```
+plot(unlist(lapply(W$delta, function(x) x[[1]])), type = 'l')
+plot(unlist(lapply(W$delta, function(x) x[[2]])), type = 'l')
+plot(unlist(lapply(W$delta, function(x) x[[59]])), type = 'l')
+plot(unlist(lapply(W$delta, function(x) x[[60]])), type = 'l')
+```
+
+some trace plots for kappa for several years (indices 1, 2, 59, 60)
+
+```
+plot(unlist(lapply(W$kappa1, function(x) x[[1]])), type = 'l')
+plot(unlist(lapply(W$kappa1, function(x) x[[2]])), type = 'l')
+plot(unlist(lapply(W$kappa1, function(x) x[[59]])), type = 'l')
+plot(unlist(lapply(W$kappa1, function(x) x[[60]])), type = 'l')
+```
+
+trace plot for rho
+
+```
+plot(W$rho, type = 'l')
+```
+
+fitted abundance and trajectory
+
+```
+  H_adu = catch_data$adu
+  H_pup = catch_data$pup
+  pp = pup_production
+  plot((1:75) + 1944, 1:75, ylim = c(0, 2000000), type = 'n',
+    xlab = 'Year', ylab = 'Population')
+    
+  nyrs = 75
+  for(k in 1:1000) {
+    N_adu <- rep(NA, times = nyrs)
+    N_pup <- N_adu
+    N_adu[1] <- W$N_adu1[k]
+    N_pup[1] <- W$N_pup1[k]
+    for(i in 2:nyrs) {
+      N_adu[i] <- W$delta[[k]][i-1]*(N_adu[i-1]-H_adu[i-1]) + 
+        W$kappa1[[k]][i-1]*(N_pup[i-1] - H_pup[i-1])
+      N_pup[i] <- exp(-W$rho[k]*(N_adu[i-1]+N_pup[i-1])/100000)*
+        W$phi[[k]][i-1]*N_adu[i-1]
+    }
+  lines((1:length(N_adu)) + 1944, N_adu, col = rgb(.5,.5,.5,.05))
+  lines((1:length(N_adu)) + 1944, N_pup, col = rgb(.9,.1,.1,.03))
+  }
+  
+  points(pp[,c('year','est')], pch = 19, col = 'brown', cex = 2)
+  lines(catch_data$year, catch_data$adu, lwd = 3)
+  lines(catch_data$year, catch_data$pup, col = 'orange', lwd = 3)
+```
 
 -------------
 ##### Disclaimer
