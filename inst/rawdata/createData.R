@@ -1,9 +1,9 @@
-path1 = '/media/jay/data/desktop_data/ActiveService/NAMMCO/MCMCharp_package/'
-catch_data = read.csv(paste0(path1,'MCMCharp/inst/rawdata/catch_data.csv'), 
+path1 = system.file("rawdata/pup_production.csv", package = "MCMCharp")
+catch_data = read.csv(paste0(path1,'/catch_data.csv'), 
   header = FALSE, col.names = c('year','pup','adu'))
-pup_production = read.csv(paste0(path1,'MCMCharp/inst/rawdata/pup_production.csv'),
+pup_production = read.csv(paste0(path1,'/pup_production.csv'),
   header = FALSE, col.names = c('year','est','cv'))
-fecundity_data = read.csv(paste0(path1,'MCMCharp/inst/rawdata/fecundity_data.csv'),
+fecundity_data = read.csv(paste0(path1,'/fecundity_data.csv'),
   header = FALSE, col.names = c('year','est','sd'))
 pup_production$se = pup_production$cv*pup_production$est
 catch_data$i = catch_data$year - 1944
