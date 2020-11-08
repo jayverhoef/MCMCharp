@@ -1,0 +1,12 @@
+Package: MCMCharp
+Type: Package
+Title: A Quick and Dirty Bayesian Leslie Matrix Model of Norway HarpEast Data 
+Version: 1.0.0
+Date: 2020-11-06
+Depends: R (>= 3.6) 
+Author: Jay Ver Hoef
+Maintainer: Jay Ver Hoef <jay.verhoef@gmail.com>
+Description: A Quick and Dirty Bayesian Leslie Matrix Model of Norway HarpEast Data 
+License: GPL-2
+LazyLoad: yes
+RoxygenNote: 7.1.1
