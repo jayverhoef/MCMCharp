@@ -32,11 +32,14 @@ install_github("jayverhoef/MCMCharp")
 Examine the Example Data
 ------------------------
 
-The help file for the example data set can found by typing
+The data are embedded in the R package
 
 ```
-library(fluvgrm)
-help(LewWillCol.ssn)
+library(MCMCharp)
+data(catch_data)
+data(pup_production)
+print(catch_data)
+print(pup_production)
 ```
 in R.  The scripts below show how to import it and obtain results in the paper.
 
