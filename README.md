@@ -50,12 +50,14 @@ system.file("rawdata/pup_production.csv", package = "MCMCharp")
 
 using this script
 
-print(system.file("rawdata/createData.R", package = "MCMCharp"))
+system.file("rawdata/createData.R", package = "MCMCharp")
+
+You can navigate to this script and run it in you favorite R environment.
 
 Run R Scripts
 -------------
 
-*Real Data*
+*Running MCMC code*
 
 After all packages are installed, the script used to access the data and create Figures 4 (enhanced with color), 5, and 6 is the file 'realDataFigures.R' in the scripts folder.  To see where that is in your file system use:
 
