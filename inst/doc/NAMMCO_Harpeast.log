@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  8 NOV 2020 02:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.12)  8 NOV 2020 10:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1030,7 +1030,7 @@ Package pdftex.def Info: figure/Post_kappa.pdf  used on input line 301.
  [10
 
  <./figure/Post_kappa.pdf>]
-<figure/Post_eigval.pdf, id=320, 505.89pt x 505.89pt>
+<figure/Post_eigval.pdf, id=321, 505.89pt x 505.89pt>
 File: figure/Post_eigval.pdf Graphic file (type pdf)
 <use figure/Post_eigval.pdf>
 Package pdftex.def Info: figure/Post_eigval.pdf  used on input line 312.
@@ -1038,6 +1038,11 @@ Package pdftex.def Info: figure/Post_eigval.pdf  used on input line 312.
  [11
 
  <./figure/Post_eigval.pdf>]
+[12
+
+] [13
+
+]
 \tf@nav=\write6
 \openout6 = `NAMMCO_Harpeast.nav'.
 
@@ -1047,20 +1052,19 @@ Package pdftex.def Info: figure/Post_eigval.pdf  used on input line 312.
 \tf@snm=\write8
 \openout8 = `NAMMCO_Harpeast.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
-
-(./NAMMCO_Harpeast.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 365.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 365.
+ (./NAMMCO_Harpeast.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 365.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 365.
 Package rerunfilecheck Info: File `NAMMCO_Harpeast.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 19143 strings out of 492982
- 358345 string characters out of 6134895
- 451802 words of memory out of 5000000
- 22201 multiletter control sequences out of 15000+600000
+ 19181 strings out of 492982
+ 359284 string characters out of 6134895
+ 451803 words of memory out of 5000000
+ 22235 multiletter control sequences out of 15000+600000
  26064 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,15n,51p,803b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1070,14 +1074,15 @@ f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
-/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on NAMMCO_Harpeast.pdf (11 pages, 838697 bytes).
+c/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/
+uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on NAMMCO_Harpeast.pdf (13 pages, 851480 bytes).
 PDF statistics:
- 393 PDF objects out of 1000 (max. 8388607)
- 349 compressed objects within 4 object streams
- 23 named destinations out of 1000 (max. 500000)
+ 452 PDF objects out of 1000 (max. 8388607)
+ 404 compressed objects within 5 object streams
+ 27 named destinations out of 1000 (max. 500000)
  68 words of extra memory for PDF output out of 10000 (max. 10000000)
 

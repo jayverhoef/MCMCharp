@@ -17,7 +17,7 @@ As a scientific work, and in keeping with common scientific practicies, we kindl
 Executive Summary
 -----------------
 
-MCMC sampling for simple harp seal model with a 2-age Leslie matrix model where parameters are stochastic from year to year, but each parameter has a common prior across years.  There are also priors on starting values for adults and pups, and a prior that controls density-dependent decay in fecundity.
+MCMC sampling for a simple harp seal model with a 2-age Leslie matrix model where parameters are stochastic from year to year, but each parameter has a common prior across years.  There are also priors on starting values for adults and pups, and a prior that controls density-dependent decay in fecundity.
 
 Installation
 ------------
@@ -54,6 +54,21 @@ using this script
 system.file("rawdata/createData.R", package = "MCMCharp")
 
 You can navigate to this script and run it in you favorite R environment.
+
+A PDF Presentation on Model and Results
+------------------------
+
+A pdf presentation on the model can be found here
+
+system.file("doc/MCMCharp.pdf", package = "MCMCharp")
+
+The LATEX file that produced the presentation can be found here
+
+system.file("doc/MCMCharp.tex", package = "MCMCharp")
+
+and all figures can be found in this subdirectory
+
+system.file("doc/figure", package = "MCMCharp")
 
 Run R Scripts
 -------------

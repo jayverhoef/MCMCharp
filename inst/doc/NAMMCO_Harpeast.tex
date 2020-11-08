@@ -311,6 +311,42 @@ Custom code written in R, uses batch sampling for $\bdelta,\bkappa,\bphi$, with 
 \end{center}
 \end{frame}
 
+
+%-----------------------------------------------------------------------
+%           Notes
+%-----------------------------------------------------------------------
+
+\begin{frame}
+Notes
+
+\begin{itemize}
+
+  \item The 2-age Leslie matrix model can be obtained from more detailed age- and sex-structured Leslie matrix models if they are collapsed properly.  The details can be found in the appendix of Boveng et al. (2018), listed above.  The intrinsic growth rate (first eigenvalue) and stable age proportions can be preserved between detailed Leslie matrix and collapsed Leslie matrix.  Collapsing the Leslie matrix model matched more closely to the data at hand.
+  
+  \item This is not a realistic model for harp data, as there are better priors that can be developed from auxilliary data.  However, this package shows that it is easy to create custom code.
+     
+\end{itemize}
+
+\end{frame}
+
+%-----------------------------------------------------------------------
+%           Notes
+%-----------------------------------------------------------------------
+
+\begin{frame}
+
+\begin{itemize}
+
+  \item The code runs quickly for such a small data set, even though there are 228 parameters (75 each for $\bdelta$, $\bkappa$, and $\bphi$, along with $\rho$, $P_{1}$, and $A_{1}$), by using batch sampling for $\bdelta$, $\bkappa$, and $\bphi$.
+
+  \item There is very little survey data, on pups only.  The results of the model depend a lot on the priors.
+
+  \item The attraction of a full Bayesian model is that we sample from the full joint posterior distribution.  The posterior distribution of pup and nonpup abundance is derived from the Leslie matrix model through the joint distribution of $\bdelta$, $\bkappa$, $\bphi$, $\rho$, $P_{1}$, and $A_{1}$.  Moreover, the posterior distribution of intrinsic growth, obtained from the first eigenvalue of the Leslie matrix model, is easily obtained if we have the joint posterior distribution of Leslie matrix parameters.
+ 
+\end{itemize}
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%            %%%%%%%    %%%%%%%%  %%%%%%%       %%%%%%%%%%%%%%%%%%%%%%%%
