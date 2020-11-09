@@ -85,7 +85,7 @@ The main file that runs the MCMC code is the function MCMCharp().  To see a list
 help(MCMCharp)
 ```
 
-The arguments have descriptions, and match the description of the code, given above.
+The arguments are named to match the description of the model, given in the pdf, which can be obtained as shown above.
 
 To accept all defaults, and set a random number seed for repeatability, try
 
@@ -104,12 +104,13 @@ This code, contained in an R script, can be found here,
 system.file("scripts/runMCMC.R", package = "MCMCharp")
 ```
 
-The results of this run are already stored, so if you don't want to wait, you can simply type to go straight to graphics below.
+The results of this run are already stored, so if you don't want to wait, you can simply type
 
 ```
 data(W)
 ```
 
+and go straight to graphics below.
 
 *Some Graphics*
 
