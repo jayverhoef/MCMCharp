@@ -114,7 +114,7 @@ and go straight to graphics below.
 
 *Some Graphics*
 
-Here are some trace plots for MCMC sampling.  More formal tests on convergence can be applied.  A single R script file with all of these plots can be found here
+Here are some trace plots for MCMC sampling.  More formal tests on convergence can be applied.  A single R script file with all of the plots shown below can be found here
 
 system.file("scripts/create_figures.R", package = "MCMCharp")
 
