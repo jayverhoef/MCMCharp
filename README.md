@@ -41,7 +41,7 @@ data(pup_production)
 print(catch_data)
 print(pup_production)
 ```
-in R.  The scripts below show how to import it and obtain results in the paper.
+The scripts below show how the data were created (but is unnecessary to re-create).
 
 The data were created from CSV files stored here
 
@@ -53,7 +53,7 @@ using this script
 
 system.file("rawdata/createData.R", package = "MCMCharp")
 
-You can navigate to this script and run it in you favorite R environment.
+You can navigate to this script and run it in you favorite R environment if you want to modify the data from scratch.
 
 A PDF Presentation on Model and Results
 ------------------------
