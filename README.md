@@ -292,7 +292,7 @@ lines((-30:30)/30 + prho_mu,
   dnorm((-30:30)/30 + prho_mu, mean = prho_mu, sd = prho_sd), col = 'blue', lwd = 2)
 ```
 
-priors and posteriors for first eigenvalue for several years, both with and without density dependence factor (without is intrinsic growth at very low population values)
+priors and posteriors for first eigenvalue for several years, both with and without density dependence factor (without it we obtain intrinsic growth at very low population values, with little density dependence)
 
 ```
   par_orig = par(no.readonly = TRUE)
