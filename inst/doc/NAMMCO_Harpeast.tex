@@ -392,14 +392,30 @@ Notes
 
 \begin{itemize}
 
-  \item The 2-age Leslie matrix model can be obtained from more detailed age- and sex-structured Leslie matrix models if they are collapsed properly.  The details can be found in the appendix of Boveng et al. (2018), listed above.  The intrinsic growth rate (first eigenvalue) and stable age proportions can be preserved between detailed Leslie matrix and collapsed Leslie matrix.  Collapsing the Leslie matrix model matched more closely to the data at hand.
-  
-  \item This is not a realistic model for harp data, as there are better priors that can be developed from auxilliary data.  However, this package shows that it is easy to create custom code.
-     
+  \item The 2-age Leslie matrix model can be obtained from more detailed age- and sex-structured Leslie matrix models if they are collapsed properly.  The details can be found in the appendix of Boveng et al. (2018), listed above.  The intrinsic growth rate (first eigenvalue) and stable age proportions can be preserved between the detailed Leslie matrix and a collapsed Leslie matrix.  Collapsing the Leslie matrix model matches more closely to the data at hand.
+       
 \end{itemize}
 
 \end{frame}
 
+%-----------------------------------------------------------------------
+%           Notes
+%-----------------------------------------------------------------------
+
+\begin{frame}
+
+\begin{itemize}
+
+  \item This is not a realistic model for the harpeast data, as there are better priors that can be developed from auxilliary data.  However, the results are intermediate to the State-space model (black line) and ICES management model (gray line) found in {{\O}ig{\aa}rd and Skaug}, ICES, 2015, but captures a decline in early years (See left Figure below).
+
+\end{itemize}
+
+\begin{center}
+	\includegraphics[height=3.5cm]{figure/Tor-Arne_ICES_2015_figure2.png}
+  \includegraphics[height=3.5cm]{figure/Pop_traj} 
+\end{center}
+
+\end{frame}
 %-----------------------------------------------------------------------
 %           Notes
 %-----------------------------------------------------------------------
